@@ -29,27 +29,48 @@
         sampleArrayB[8]: A3
         -->
         <br>
-         <script type = "text/javascript">
+        <script type = "text/javascript">
 
-         //修正していいところ
+        //修正していいところ
+        //function 関数名(引数) { 処理 }
+        //複数の処理をひとまとまりにしたものでメソッドと呼ばれる＝関数名toOneDimension
+        //「引数」とは関数に渡して処理の中でその値を使うことができるもの
+        //previousValue=初回実行時は、第二引数のinitialValueの値。initialValueが指定されていなければ、配列の0番目の値が該当
+        //currentValue=現在の配列の値。初回実行時は、initialValueが指定されている場合、配列の0番目の値。そうでなければ、配列の1番目の値
         function toOneDimension(previousValue, currentValue) {
-            return previousValue.concat(currentValue);
 
+        	//戻り値、値や文字列などを関数の外に返却（出力）する処理
+            //concatメソッドは2以上の配列を結合して新しい配列を作るときに使う、文字列を結合することもできる
+        	//previousValueとcurrentValueをconcatで結合する
+        	//対象の配列.concat(結合する配列);
+        	//return currentValue.concat(previousValue); //←これが正解！
+        	return previousValue.concat(currentValue);
         }
 
          //修正だめ
+         //「①配列コンストラクタ」を使う場合は、「new」を使ってArray()の引数へ格納したい文字列を設定する
+         //「②配列リテラル」を使う場合は、[ ]を使ってそのまま文字列を設定すればOK！今回はこっち！
         var sampleArrayA = [
             ['A1', 'A2', 'A3'],
             ['B1', 'B2', 'B3'],
             ['C1', 'C2', 'C3']];
 
         //修正していいところ
+        //関数の呼び出し、sampleArrayA.reduceのtoOneDimensionをsampleArrayBに代入
+        //reduce()は配列に対して適用され、結果を蓄積していくメソッド
+        //対象の配列.reduce(コールバック関数);
         var sampleArrayB = sampleArrayA.reduce(toOneDimension);
 
         //以下最後まで修正だめ
-        for (var counterVar = 0; counterVar <sampleArrayB.length; counterVar++) {
+        //for (初期化式; 条件式; 変化式)
+        //①初期化式で変数counterVarに0が代入される、counterVarがsampleArrayB.lengthより小さい場合、
+        //length=配列に格納されている要素数
+        for (var counterVar = 0; counterVar < sampleArrayB.length; counterVar++) {
 
-            document.write('sampleArrayB['+counterVar +']:');
+        	//②下記が実行される
+        	//結果を出力
+        	//③変化式 counterVar++ が実行されて変数 counterVar の値が 1 となり、for文の2周目の処理に入る
+            document.write('sampleArrayB['+ counterVar +']:');
             document.write(sampleArrayB[counterVar]);
             document.write('<br/>');
 
