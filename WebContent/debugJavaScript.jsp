@@ -40,16 +40,16 @@
         function toOneDimension(previousValue, currentValue) {
 
         	//戻り値、値や文字列などを関数の外に返却（出力）する処理
-            //concatメソッドは2以上の配列を結合して新しい配列を作るときに使う、文字列を結合することもできる
+        	//concatメソッドは2以上の配列を結合して新しい配列を作るときに使う、文字列を結合することもできる
         	//previousValueとcurrentValueをconcatで結合する
         	//対象の配列.concat(結合する配列);
         	//return currentValue.concat(previousValue); //←これが正解！
         	return previousValue.concat(currentValue);
         }
 
-         //修正だめ
-         //「①配列コンストラクタ」を使う場合は、「new」を使ってArray()の引数へ格納したい文字列を設定する
-         //「②配列リテラル」を使う場合は、[ ]を使ってそのまま文字列を設定すればOK！今回はこっち！
+        //修正だめ
+        //「①配列コンストラクタ」を使う場合は、「new」を使ってArray()の引数へ格納したい文字列を設定する
+        //「②配列リテラル」を使う場合は、[ ]を使ってそのまま文字列を設定すればOK！今回はこっち！
         var sampleArrayA = [
             ['A1', 'A2', 'A3'],
             ['B1', 'B2', 'B3'],
